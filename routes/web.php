@@ -24,3 +24,7 @@ Route::prefix('admin')->group(function(){
     Route::get('restaurants/remove/{id}', 'Admin\\RestaurantController@delete')->name('restaurant.remove');
 
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
