@@ -1,3 +1,7 @@
+@extends('layouts.app')
+
+@section('content')
+
 <h1>Edição de Restaurante</h1>
 <hr>
 
@@ -37,3 +41,7 @@
     <input type="submit" value="Cadastrar">
 
 </form>
+
+
+@endsection
+

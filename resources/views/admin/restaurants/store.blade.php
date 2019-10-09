@@ -1,3 +1,7 @@
+@extends('layouts.app')
+
+@section('content')
+
 <h1>Inserção de Restaurante</h1>
 <hr>
 <form action="{{route('restaurant.store')}}" method="post">
@@ -37,3 +41,10 @@
     <input type="submit" value="Cadastrar">
 
 </form>
+
+
+@endsection
+
+
+
+

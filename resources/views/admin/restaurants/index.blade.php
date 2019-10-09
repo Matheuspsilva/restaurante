@@ -1,7 +1,11 @@
-<h1>Restaurantes</h1>
-<a href="{{route('restaurant.new')}}">Novo</a>
-<hr>
-<table>
+@extends('layouts.app')
+
+@section('content')
+
+<div class="container">
+<a href="{{route('restaurant.new')}}" class="float-right btn btn-success">Novo</a>
+<h1 class="float-left">Restaurantes</h1>
+<table class="table table-striped">
     <thead>
         <tr>
             <th>#</th>
@@ -17,11 +21,14 @@
         <td>{{$r->name}}</td>
         <td>{{$r->created_at}}</td>
         <td>
-        <a href="{{route('restaurant.edit', ['restaurant' => $r -> id])}}">Editar</a>
-        <a href="{{route('restaurant.remove', ['id' => $r -> id])}}">Excluir</a>
+        <a href="{{route('restaurant.edit', ['restaurant' => $r -> id])}}" class="btn btn-primary">Editar</a>
+        <a href="{{route('restaurant.remove', ['id' => $r -> id])}}" class="btn btn-danger">Excluir</a>
 
         </td>
     </tr>
     @endforeach
     </tbody>
 </table>
+</div>
+
+@endsection
