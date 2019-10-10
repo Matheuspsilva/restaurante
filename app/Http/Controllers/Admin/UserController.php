@@ -20,6 +20,7 @@ class UserController extends Controller
     public function store(UserRequest $request){
         $userData = $request->all();
         $request->validated();
+        $user['password'] = bcrypt($userData['password']);
         $user = new User();
         $user->create($userData);
 
@@ -33,6 +34,11 @@ class UserController extends Controller
     public function update(UserRequest $request, $id){
         $userData = $request->all();
         $request->validated();
+
+        if($userData['password']){
+            $userData['password'] = bcrypt($userData['password']);
+        }
+
         $user =  User::findOrFail($id);
         $user->update($userData);
 
