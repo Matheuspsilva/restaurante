@@ -37,6 +37,15 @@ Route::group(['middleware' => ['auth']], function(){
             Route::get('remove/{id}', 'UserController@delete')->name('user.remove');
         });
 
+        Route::prefix('menus')->group(function(){
+            Route::get('','MenuController@index')->name('menu.index');//name = apelido da rota
+            Route::get('new','MenuController@new')->name('menu.new');
+            Route::post('store','MenuController@store')->name('menu.store');
+            Route::get('edit/{menu}', 'MenuController@edit')->name('menu.edit');
+            Route::post('update/{id}', 'MenuController@update')->name('menu.update');
+            Route::get('remove/{id}', 'MenuController@delete')->name('menu.remove');
+        });
+
     });
 });
 
