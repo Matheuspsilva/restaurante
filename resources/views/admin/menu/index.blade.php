@@ -21,14 +21,13 @@
         <tr>
         <td>{{$m->id}}</td>
             <td>{{$m->name}}</td>
-            <td>{{$m->restaurant->name}}</td>
-            <td>{{$m->restaurant->name}}</td>
             <td>
                 <a href="{{route('restaurant.edit', ['restaurant' => $m->restaurant->id])}}">
                     {{$m->restaurant->name}}
                 </a>
             </td>
             <td>{{$m->created_at}}</td>
+
             <td>{{$m->price}}</td>
             <td>
             <a href="{{route('menu.edit', ['menu' => $m -> id])}}" class="btn btn-primary">Editar</a>

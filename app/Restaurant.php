@@ -15,4 +15,8 @@ class Restaurant extends Model
         return $this->hasMany(Menu::class);
     }
 
+    public function owner(){
+        return $this->belongsTo(User::class);
+    }
+
 }
