@@ -22,6 +22,7 @@
             <td>{{$r->created_at}}</td>
             <td>
             <a href="{{route('restaurant.edit', ['restaurant' => $r -> id])}}" class="btn btn-primary">Editar</a>
+            <a href="{{route('restaurant.photo', ['id' => $r -> id])}}" class="btn btn-warning">Fotos</a>
             <a href="{{route('restaurant.remove', ['id' => $r -> id])}}" class="btn btn-danger">Excluir</a>
 
             </td>
