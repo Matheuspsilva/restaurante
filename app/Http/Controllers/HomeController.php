@@ -28,8 +28,12 @@ class HomeController extends Controller
         return view('home', compact('restaurants'));
     }
 
-    public function get(Restaurant $id){
-        return view('single', compact('id'));
+    //Route model binding
+    public function get(Restaurant $slug){
+        // where('slug', $slug)
+        //$restaurant = Restaurant::whereSlug($slug)->first();
+        $restaurant = $slug;
+        return view('single', compact('restaurant'));
     }
 
 }
